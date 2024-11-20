@@ -1,0 +1,79 @@
+// Documentation: `man 5 waybar`
+
+{
+  "position": "top",
+  "spacing": 0,
+
+  "modules-left": ["hyprland/workspaces", "custom/arrow-right-fg"],
+  "modules-right": ["custom/arrow-left-fg", "network", "battery", "clock"],
+
+  "backlight": {
+    "format": "{percent}% 💡"
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-time": "{H}:{m}",
+    "format-charging": "{capacity}% 󰂄",
+    "tooltip-format": "Time left: {time}\nPower: {power}W",
+    "format-icons": ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
+  },
+  "clock": {
+    "calendar": {
+      "format": {
+        "months": "<span color='#ffca85'>{}</span>",
+        "today": "<span color='#a277ff'><b><u>{}</u></b></span>",
+        "weekdays": "<span color='#61ffca'>{}</span>"
+      },
+      "mode": "year",
+      "mode-mon-col": 3
+    },
+    // "locale": "en_GB.UTF-8", // start weeks on Monday
+    "format": "{:%Y-%m-%d (%H:%M) }",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "network": {
+    "format": "{ipaddr}/{cidr} {icon}",
+    "format-wifi": "{ipaddr}/{cidr} @ {essid} ({signalStrength}%) {icon}",
+    "tooltip-format": "<tt>Interface: {ifname}\n  Gateway: {gwaddr}\n</tt>",
+    "tooltip-format-wifi": "<tt>Interface: {ifname}\n  Gateway: {gwaddr}\nFrequency: {frequency}GHz\n   Signal: {signaldBm}dBm ({signalStrength}%)</tt>",
+    "format-icons": {
+      "default": "",
+      "ethernet": "",
+      "wifi": ""
+    }
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
+
+  "custom/arrow-left-fg": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow-left-bg": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow-right-fg": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow-right-bg": {
+    "format": "",
+    "tooltip": false
+  }
+}
